@@ -81,7 +81,7 @@
 }
 .content-photos__photo_description{
     max-width: 282px;
-    max-height: 361px;
+    min-height: 361px;
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -124,11 +124,12 @@ background-image: url(../images/like_button_gray.svg);
     .content-profile{
         margin: auto;
         max-width: 282px;
-        max-height: 286px;
+        min-height: 286px;
         flex-direction: column;
     }
     .content-profile__avatar{
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
     .content-profile__info{
         margin-top: 30px;
@@ -143,9 +144,26 @@ background-image: url(../images/like_button_gray.svg);
         line-height: 1.2;
         margin: 0;
     }
+    .content-profile__info-edit_buttom{
+        min-width: 18px;
+        max-height: 18px;
+        margin-top: 5px;
+    }
     .content-profile__info-description{
         font-size: 14px;
         margin: auto;
     }
-
+    .content-profile__add_buttom{
+        width: 282px;
+        height: 50px;
+        margin-top: auto;
+    }
+    .content-photos{
+        display: flex;
+        flex-direction: column;
+        margin-top: 36px;
+    }
+    .content-photos__letrero{
+        min-height: 20%;
+    }
 }

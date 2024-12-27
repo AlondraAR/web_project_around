@@ -5,4 +5,16 @@
     margin-left: 200px;
     font-size: 18px;
     font-weight: 400;
+    color: #545454;
+}
+
+@media screen and (max-width:320px){
+    .footer{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 36px;
+    margin-left: 20px;
+    font-size: 14px;
+    height: 14px;
+    }
 }

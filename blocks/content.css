@@ -47,6 +47,10 @@
     margin-left: 18px;
     margin-top: 15px;
 }
+.content-profile__info-edit_buttom:hover{
+    border: 2px solid gray;
+    background-image: url(../images/edit_button_gray.png);
+}
 .content-profile__add_buttom{
     min-width: 150px;
     max-height: 50px;
@@ -55,6 +59,10 @@
     background-image: url(../images/add_buttom.png);
     background-repeat: no-repeat;
     background-position: center;
+}
+.content-profile__add_buttom:hover{
+    border: 2px solid gray;
+    background-image: url(../images/add_buton_gray.png);
 }
 .content-profile__info-description{
     font-weight: 400;
@@ -83,14 +91,33 @@
     max-height: 282px;
 }
 .content-photos__description{
-    margin: auto;
+    margin: 0;
     margin-top: 25px;
     margin-left: 21px;
     color: black;
     font-weight: 900;
     font-size: 24px;
-    width: 100%;
+    width: 80%;
     height: 21%;
+}
+.content-photos__letrero{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.content-photos__button-like{
+    border: none;
+    min-width: 21px;
+    height: 19px;
+background-color: #fff;
+    background-image: url(../images/button_like.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    margin-top: 30px;
+    padding: 0;
+}
+.content-photos__button-like:hover{
+background-image: url(../images/like_button_gray.svg);
 }
 
 @media screen and (max-width:320px){

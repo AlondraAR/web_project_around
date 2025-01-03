@@ -36,7 +36,7 @@
     margin: 0;
     margin-bottom: 16px;
 }
-.content-profile__info_edit-buttom{
+.content-profile__info-editButtom{
     min-width: 24px;
     max-height: 24px;
     background-color: rgba(0, 0, 0, 1);
@@ -48,7 +48,7 @@
     margin-top: 15px;
     cursor: pointer;
 }
-.content-profile__info_edit-buttom:hover{
+.content-profile__info-editButtom:hover{
     border: 2px solid gray;
     background-image: url(../../images/edit_button_gray.png);
 }
@@ -154,7 +154,7 @@ background-image: url(../../images/like_button_gray.svg);
         line-height: 1.2;
         margin: 0;
     }
-    .content-profile__info_edit-buttom{
+    .content-profile__info-editButtom{
         min-width: 18px;
         max-height: 18px;
         margin-top: 5px;

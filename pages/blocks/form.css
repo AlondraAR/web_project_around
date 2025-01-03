@@ -47,7 +47,7 @@
 }
 
 .form__button-close {
-    background-image: url(../images/Close\ Icon.png);
+    background-image: url(../../images/Close\ Icon.png);
     background-repeat: no-repeat;
     position: absolute;
     top: -40px;
@@ -103,7 +103,7 @@
         margin-left: 22px;
     }
     .form__button-close {
-        background-image: url(../images/Close\ Icon_chico.png);
+        background-image: url(../../images/Close\ Icon_chico.png);
         width: 26px;
         height: 26px;
         object-fit: contain;

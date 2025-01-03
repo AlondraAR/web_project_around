@@ -1,0 +1,118 @@
+
+.form__container {
+    position: fixed; /* Fija el formulario en la ventana */
+    top: 50%; /* Posición vertical al 50% */
+    left: 50%; /* Posición horizontal al 50% */
+    transform: translate(-50%, -50%); /* Ajusta el formulario al centro exacto */
+    width: 100%;
+    max-width: 430px; /* Limita el ancho del formulario */
+    height: 330px;
+    padding: 0;
+    background-color: white;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px 0px #00000026;
+
+}
+/* Estilos para el encabezado del formulario */
+.form__heading {
+    font-size: 24px;
+    font-weight: 900;
+    color: black;
+    margin: auto;
+    margin-top: 34px;
+    margin-left: 36px;
+
+}
+.form__input-container{
+    width: 83%;
+    font-size: 14px;
+    font-weight: 400;
+    margin: auto;
+    padding: 0;
+    margin-left: 35px;
+    margin-top: 54px;
+    border: none;
+}
+
+/* Estilos para los campos de entrada */
+.form__input-container input {
+    display: block;
+    width: 100%;
+    height: 28px;
+    padding: 0;
+    margin-bottom: 28px;
+    border: none;
+    border-bottom: 1px solid #00000026;
+}
+
+.form__button-close {
+    background-image: url(../images/Close\ Icon.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -40px;
+    right: -43px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.form__button-close::before {
+    display: block;
+}
+
+.form__handlers{
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+/* Estilos para el botón guardar */
+.form__button-save {
+    width: 83%;
+    height: 50px;
+    font-size: 14px;
+    padding: 0;
+    margin: auto;
+    margin-top: 20px;
+    margin-left: 36px;
+    color: white;
+    background-color: black;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+}
+
+.form__button-save:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+@media screen and (max-width:320px){
+    .form__container{
+    max-width: 282px; /* Limita el ancho del formulario */
+    height: 322px;
+    }
+    .form__heading {
+        font-size: 18px;
+        margin-left: 22px;
+        margin-top: 25px;
+    }
+    .form__input-container{
+        margin-left: 22px;
+    }
+    .form__button-close {
+        background-image: url(../images/Close\ Icon_chico.png);
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+        padding: 0;
+        top: -30px;
+        right: 0px;
+        
+    }
+    .form__button-save{
+margin-left: 22px;
+    }
+}

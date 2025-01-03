@@ -46,6 +46,7 @@
     background-position: center;
     margin-left: 18px;
     margin-top: 15px;
+    cursor: pointer;
 }
 .content-profile__info-edit_buttom:hover{
     border: 2px solid gray;
@@ -59,6 +60,7 @@
     background-image: url(../images/add_buttom.png);
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
 }
 .content-profile__add_buttom:hover{
     border: 2px solid gray;
@@ -99,6 +101,9 @@
     font-size: 24px;
     width: 80%;
     height: 21%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .content-photos__letrero{
     display: flex;
@@ -115,9 +120,14 @@ background-color: #fff;
     margin: 0;
     margin-top: 30px;
     padding: 0;
+    cursor: pointer;
 }
 .content-photos__button-like:hover{
 background-image: url(../images/like_button_gray.svg);
+}
+
+.content-photos__button-like:active{
+    background-image: url(../images/like_active.png);
 }
 
 @media screen and (max-width:320px){

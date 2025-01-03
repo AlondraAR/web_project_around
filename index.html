@@ -14,15 +14,31 @@
         <header class="header">
         <img src="./images/white_logo.svg" alt="Logo_Page_Around" class="header__logo">
         </header>
+        
         <main class="content">
+            <section class="form" style="display: none;">
+                <div class="form__container">
+                    <h2 class="form__heading">Editar perfil</h2>
+                    <fieldset class="form__input-container">
+                        <input type="text" class="form__item_el_name" id="name">
+                        <input type="text" class="form__item_el_about" id="about">
+                    </fieldset>
+                    <fieldset class="form__handlers">
+                        <button type="submit" class="form__button-save">Guardar</button>
+                        <button class="form__button-close"></button>
+                      </fieldset>
+            
+    
+                </div>
+            </section>
             <section class="content-profile">
                 <div class="content-profile__avatar">
                     <img src="./images/image_avatar.jpg" alt="Jacques Cousteau" class="content-profile__avatar-image">
                 </div>  
                 <div class="content-profile__info">
                     <div class="content-profile__info-names">
-                    <h1 class="content-profile__info-name">Jacques Cousteau</h1>
-                    <p class="content-profile__info-description">Explorador</p>
+                    <h1 class="content-profile__info-name"> <span id="currentName">Jacques Cousteau</span></h1>
+                    <p class="content-profile__info-description"><span id="currentAbout">Explorador</span></p>
                     </div>
                     <button class="content-profile__info-edit_buttom"></button>
                       
@@ -61,7 +77,7 @@
             <div class="content-photos__photo_description"> 
                 <img src="./images/image_5.png" alt="Vanois National" class="content-photos__photo">
                 <div class="content-photos__letrero">
-                <p class="content-photos__description">Vanois National</p>
+                <p class="content-photos__description">Vanois National Park</p>
                 <button class="content-photos__button-like"></button>
             </div>
             </div>
@@ -80,5 +96,6 @@
 
         </footer>  
 </div>
+<script src="script.js"></script>
 </body>
 </html>

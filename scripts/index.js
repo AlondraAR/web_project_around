@@ -3,7 +3,7 @@ let addButton = content.querySelector('.form__button-save')
 
 
 // Seleccionar elementos del DOM
-const editButton = document.querySelector('.content-profile__info-edit_buttom');
+const editButton = document.querySelector('.content-profile__info-editButtom');
 const formContainer = document.querySelector('.form');
 const closeButton = document.querySelector('.form__button-close');
 

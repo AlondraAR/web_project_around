@@ -6,6 +6,50 @@ let addButton = content.querySelector('.form__button-save')
 const editButton = document.querySelector('.content-profile__info-editButtom');
 const formContainer = document.querySelector('.form');
 const closeButton = document.querySelector('.form__button-close');
+const initialCards = [
+  {
+    name: "Valle de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg"
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg"
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg"
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg"
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg"
+  }
+];
+const photoContainer = document.querySelector('.content-photos');
+
+initialCards.forEach(function addInitialPhoto(item) {
+
+    const photoTemplate = document.querySelector("#photo-template").content;
+    const photoElement = photoTemplate.querySelector('.content-photos__photo-description').cloneNode(true);
+  
+    photoElement.querySelector(".content-photos__description").textContent = item.name;
+    photoElement.querySelector(".content-photos__photo").src = item.link;
+  console.log(item.name);
+  console.log(item.link);
+    photoElement.querySelector('.content-photos__button-like').addEventListener("click", function (evt) {
+      evt.target.classList.toggle("content-photos__button-like_active");
+      });
+    
+    photoContainer.append(photoElement);
+    
+  });
 
 
 // Función para mostrar el formulario
@@ -53,6 +97,19 @@ window.onload = function() {
         formContainer.style.display = 'none';
     });
 
-
+    function addPhoto(photoTitleValue, photoUrlValue) {
+      const photoTemplate = document.querySelector("#photo-template").content;
+      const photoElement = photoTemplate.querySelector('.content-photos__photo-description').cloneNode(true);
+    
+      photoElement.querySelector(".content-photos__description").textContent = photoTitleValue;
+      photoElement.querySelector(".content-photos__photo").textContent = photoUrlValue;
+    
+      photoElement.querySelector('.content-photos__button-like').addEventListener("click", function (evt) {
+        evt.target.classList.toggle("content-photos__button-like_active");
+        });
+      
+      photoContainer.append(photoElement);
+      
+    }
 
 

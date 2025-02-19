@@ -1,4 +1,17 @@
-
+.formProfile{
+    position: fixed;/* hace que el contenedor se mantenga en la misma posición en la pantalla, sin importar el desplazamiento */
+    top: 0; left: 0;/* lo fija en la esquina superior izquierda de la pantalla */
+    background: rgba(0, 0, 0, .7);/*  establece un fondo negro semi-transparente */
+    height: 100%; width: 100%;/* hace que el contenedor cubra toda la pantalla */
+    z-index: 100;/* coloca el contenedor sobre los demás elementos de la página */
+}
+.formPhoto{
+    position: fixed;/* hace que el contenedor se mantenga en la misma posición en la pantalla, sin importar el desplazamiento */
+    top: 0; left: 0;/* lo fija en la esquina superior izquierda de la pantalla */
+    background: rgba(0, 0, 0, .7);/*  establece un fondo negro semi-transparente */
+    height: 100%; width: 100%;/* hace que el contenedor cubra toda la pantalla */
+    z-index: 100;/* coloca el contenedor sobre los demás elementos de la página */
+}
 .form__container {
     position: fixed; /* Fija el formulario en la ventana */
     top: 50%; /* Posición vertical al 50% */
@@ -12,6 +25,7 @@
     border: 1px solid #000000;
     border-radius: 10px;
     box-shadow: 0px 0px 25px 0px #00000026;
+    z-index: 9999;
 
 }
 /* Estilos para el encabezado del formulario */
@@ -89,6 +103,54 @@
     color: white;
 }
 
+.form__Photo {
+    position: fixed; /* Fija el formulario en la ventana */
+    top: 50%; /* Posición vertical al 50% */
+    left: 50%; /* Posición horizontal al 50% */
+    transform: translate(-50%, -50%); /* Ajusta el formulario al centro exacto */
+    width: 100%;
+    max-width: 430px; /* Limita el ancho del formulario */
+    height: 330px;
+    padding: 0;
+    background-color: white;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px 0px #00000026;
+    z-index: 9999;
+
+}
+
+.form__button-savePhoto {
+    width: 83%;
+    height: 50px;
+    font-size: 14px;
+    padding: 0;
+    margin: auto;
+    margin-top: 20px;
+    margin-left: 36px;
+    color: white;
+    background-color: black;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+}
+.form__button-closePhoto {
+    background-image: url(../../images/Close\ Icon.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -40px;
+    right: -43px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.form__button-closePhoto::before {
+    display: block;
+}
+
 @media screen and (max-width:320px){
     .form__container{
     max-width: 282px; /* Limita el ancho del formulario */
@@ -114,5 +176,14 @@
     }
     .form__button-save{
 margin-left: 22px;
+    }
+    .form__button-closePhoto {
+        right: 0;
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+        padding: 0;
+        top: -30px;
+        right: 0px;
     }
 }

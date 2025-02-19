@@ -4,7 +4,7 @@
     margin-top: 40px;
     
 }
-.content-profile{
+.content-profile{ /*Contenedor del formulario de editar el perfil*/
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -87,6 +87,7 @@
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
 }
 .content-photos__photo{
     width: 100%;
@@ -129,6 +130,63 @@ background-image: url(../../images/like_button_gray.svg);
 .content-photos__button-like_active{
     background-image: url(../../images/like_active.png);
 }
+.content-photos__deleteButton{
+    border: none;
+    width: 18px;
+    height: 19px;
+    background-image: url(../../images/Trash.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    cursor: pointer;
+
+}
+.content-photos__deleteButton:hover{
+    background-image: url(../../images/gray_trash.svg);
+}
+
+.popup-image {
+    position: fixed;/* hace que el contenedor se mantenga en la misma posición en la pantalla, sin importar el desplazamiento */
+    top: 0; left: 0;/* lo fija en la esquina superior izquierda de la pantalla */
+    background: rgba(0, 0, 0, .7);/*  establece un fondo negro semi-transparente */
+    height: 100%; width: 100%;/* hace que el contenedor cubra toda la pantalla */
+    z-index: 100;/* coloca el contenedor sobre los demás elementos de la página */
+    display: none;/* oculta el contenedor por defecto hasta que se active con JavaScript */
+}
+
+.popup_span {
+    position: absolute;/* lo posiciona dentro del .popup-image */
+    top: -60px; right: -50px;/* lo coloca en la esquina superior derecha */
+    font-size: 60px;/* establece el tamaño para la "×" */
+    color: #fff;/* blanco (color de la "x") */
+    cursor: pointer;/* cambia el cursor a una mano al pasar sobre la "x" */
+    z-index: 999999;/* coloca la "x"  sobre el resto de los elementos emergentes */
+}
+.popup-image_photo-descrp{
+    position: absolute;
+    top: 50%; left: 50%;/* centrada */
+    transform: translate(-50%, -50%);/* ajusta la posición exacta al centro */
+}
+
+.popupimage {
+    
+    border: none;
+    border-radius: 5px;/* redondea las esquinas de la imagen */
+    max-width: 75vw;/* establece el ancho de la imagen emergente */
+    max-height: 75vh;
+    object-fit: cover;/* evita que la imagen se deforme */
+    z-index: 9999;
+}
+
+.popup_description{
+ color: #fff;
+ position: relative;
+ top: 10px;
+}
+
+
 
 @media screen and (max-width:320px){
     .content-profile{
@@ -175,5 +233,10 @@ background-image: url(../../images/like_button_gray.svg);
     }
     .content-photos__letrero{
         min-height: 20%;
+    }
+    .popup_span {
+        position: absolute;/* lo posiciona dentro del .popup-image */
+        top: -60px; right: -10px;/* lo coloca en la esquina superior derecha */
+        font-size: 45px;/* establece el tamaño para la "×" */
     }
 }

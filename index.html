@@ -17,7 +17,7 @@
         </header>
         
         <main class="content">
-            <section class="form" style="display: none;">
+            <section class="formProfile" style="display: none;">
                 <div class="form__container">
                     <h2 class="form__heading">Editar perfil</h2>
                     <fieldset class="form__input-container">
@@ -27,6 +27,21 @@
                     <fieldset class="form__handlers">
                         <button type="submit" class="form__button-save">Guardar</button>
                         <button class="form__button-close"></button>
+                      </fieldset>
+            
+    
+                </div>
+            </section>
+            <section class="formPhoto" style="display: none;">
+                <div class="form__Photo">
+                    <h2 class="form__heading">Nuevo Lugar</h2>
+                    <fieldset class="form__input-container">
+                        <input type="text" class="form__item-elTitle" id="title" placeholder='Título'>
+                        <input type="text" class="form__item-elLink" id="link" placeholder='Enlace de la imagen'>
+                    </fieldset>
+                    <fieldset class="form__handlers">
+                        <button type="submit" class="form__button-savePhoto">Crear</button>
+                        <button class="form__button-closePhoto"></button>
                       </fieldset>
             
     
@@ -47,17 +62,29 @@
                 <button class="content-profile__add-buttom"></button>
             </section>
             <section class="content-photos">
+                
             </section>
 
         </main>
         <template id="photo-template">
              <div class="content-photos__photo-description">
-                <img src="" alt="" class="content-photos__photo">
+                <button class="content-photos__deleteButton"></button>
+                <img src="" alt="" class="content-photos__photo" onclick="accion()" style="cursor: pointer;">
                 <div class="content-photos__letrero">
-                <p class="content-photos__description"></p>
-                <button class="content-photos__button-like"></button>
+                    <p class="content-photos__description"></p>
+                    <button class="content-photos__button-like"></button>
                 </div>
+                <div class="popup-image"> <!-- el contenedor de las imagenes emergentes -->
+                    
+                    <div class="popup-image_photo-descrp">
+                    <img class="popupimage" src="" alt="">
+                    <span class="popup_span">&times;</span> <!-- &times es el simbolo de la "x" que se usa para cerrar la ventana emergente -->
+                    <p class="popup_description"></p>
+                </div>
+                </div>
+                
             </div>
+            
         </template>
         <footer class="footer">
             <p>&#169; 2024 Around The U.S.</p>

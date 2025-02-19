@@ -3,7 +3,7 @@
     justify-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
-    background-color: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 1);
     color: #545454;
     margin: 0;
     padding: 0;

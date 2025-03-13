@@ -1,4 +1,4 @@
-let content = document.querySelector('.content');
+const content = document.querySelector('.content');
 let addButton = content.querySelector('.form__button-save')
 
 
@@ -40,29 +40,41 @@ const initialCards = [
 
 const photoContainer = document.querySelector('.content-photos');
 
-initialCards.forEach(function addInitialPhoto(item) {
+function addPhoto(name,link){
 
     const photoTemplate = document.querySelector("#photo-template").content;
     const photoElement = photoTemplate.querySelector('.content-photos__photo-description').cloneNode(true);
-  
-    photoElement.querySelector(".content-photos__description").textContent = item.name;
-    photoElement.querySelector(".content-photos__photo").src = item.link;
-    photoElement.querySelector(".content-photos__photo").alt = item.name;
 
-  console.log(item.name);
-  console.log(item.link);
+    photoElement.querySelector(".content-photos__description").textContent = name;
+    photoElement.querySelector(".content-photos__photo").src = link;
+    photoElement.querySelector(".content-photos__photo").alt = name;
+
     photoElement.querySelector('.content-photos__button-like').addEventListener("click", function (evt) {
       evt.target.classList.toggle("content-photos__button-like_active");
       });
-    
-    photoContainer.append(photoElement);
-    
-  });
 
+      if (photoContainer) {
+        // Agregar la nueva foto al principio
+        photoContainer.prepend(photoElement);
+    
+        // Si el número de fotos en el contenedor supera 6, eliminar la última foto
+        const photos = photoContainer.querySelectorAll('.content-photos__photo-description');
+        if (photos.length > 6) {
+          photoContainer.removeChild(photos[photos.length - 1]); // Elimina el último elemento
+        }
+      } else {
+        console.log("No se encontró el contenedor de fotos");
+      }
+}
+
+// Agregar las fotos iniciales
+initialCards.forEach(function(item) {
+addPhoto(item.name, item.link);
+  
+});
 
 // Función para mostrar el formulario
 editButton.addEventListener('click', () => {
-    console.log("OK clickado");
     formProfileContainer.style.display = 'block'; // Mostrar el formulario
 });
 
@@ -71,15 +83,17 @@ closeButton.addEventListener('click', () => {
     formProfileContainer.style.display = 'none'; // Ocultar el formulario
 });
 
+// Mostrar el formulario para agregar foto
 addPhotoBottom.addEventListener('click', () => {
-  console.log("OK clickado");
   formPhotoContainer.style.display = 'block'; // Mostrar el formulario
 });
+
+// Cerrar formulario para agregar foto
 closeButtonPhoto.addEventListener('click', () => {
   formPhotoContainer.style.display = 'none'; // Ocultar el formulario
 });
 
-
+// Evento para cargar los valores actuales en el formulario de perfil
 window.onload = function() {
     // Obtener los valores actuales del HTML
     let name = document.getElementById('currentName').textContent;
@@ -102,64 +116,46 @@ window.onload = function() {
         document.getElementById('currentName').textContent = editedName;
         document.getElementById('currentAbout').textContent = editedAbout;
 
-        console.log(editedName);
-        console.log(editedAbout);
-
       };
 
-
+// Evento para guardar la información del perfil
       addButton.addEventListener('click', (event) => {
         submitNewInformation(event);
         formProfileContainer.style.display = 'none';
     });
 
-    function addPhoto(event) {
+  
+    // Evento para agregar una nueva foto desde el formulario
+    createPhotoBotton.addEventListener('click', (event) => {
       event.preventDefault();
-
       const photoTitleValue = document.getElementById('title').value;
       const photoUrlValue = document.getElementById('link').value;
-
-      const photoTemplate = document.querySelector("#photo-template").content;
-      const photoElement = photoTemplate.querySelector('.content-photos__photo-description').cloneNode(true);
-    
-      photoElement.querySelector(".content-photos__description").textContent = photoTitleValue;
-      photoElement.querySelector(".content-photos__photo").src = photoUrlValue;
-    
-      photoElement.querySelector('.content-photos__button-like').addEventListener("click", function (evt) {
-        evt.target.classList.toggle("content-photos__button-like_active");
-        });
-
-      photoContainer.prepend(photoElement);
-      photoContainer.removeChild(photoContainer.lastElementChild);
-    }
-
-    createPhotoBotton.addEventListener('click', (event) => {
-      addPhoto(event);
+      addPhoto(photoTitleValue, photoUrlValue);// Usar la misma función para agregar la nueva foto
       formPhotoContainer.style.display = 'none';
   });
 
+  
+  // Eliminar fotos
   const deleteButtons = document.querySelectorAll('.content-photos__deleteButton');
   deleteButtons.forEach(function(boton){
     boton.addEventListener('click',function() {
-      console.log('ok click');
       const deleteElement = boton.parentElement;
-      console.log(deleteElement);
       deleteElement.remove();
       }
 
     )
   });
   
+  // Mostrar imagen en popup al hacer clic en una imagen
   document.querySelectorAll('.content-photos img').forEach(image => {
    image.onclick = () => {
-    console.log('Imagen clickeada')
    document.querySelector('.popup-image').style.display = 'block';
    document.querySelector('.popupimage').src = image.getAttribute('src');
    document.querySelector('.popup_description').textContent = image.getAttribute('alt');
-   console.log(image.getAttribute('alt'));
    }
     });
     
+    // Cerrar popup al hacer clic en la "x"
     document.querySelector('.popup-image span').onclick = () => { //funcion para cuando se de clic en la "x"
      document.querySelector('.popup-image').style.display = 'none'; //ocultamos el contenedor emergente
     }
